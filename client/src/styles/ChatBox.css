@@ -1,0 +1,35 @@
+.chatbox-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+}
+
+.chatbox-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 0.5rem;
+}
+
+.own-message {
+  text-align: right;
+  background: #e3f2fd;
+  border-radius: 8px;
+}
+
+.other-message {
+  text-align: left;
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+.chatbox-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.system-message {
+  text-align: center;
+  color: #aaa;
+  font-style: italic;
+}

@@ -1,0 +1,12 @@
+.video-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.video-player {
+  width: 45%;
+  height: 80vh;
+  background: #000;
+  border-radius: 10px;
+  object-fit: cover;
+}
