@@ -105,6 +105,20 @@ const Room = () => {
     socket.on("receive-message", (data) => setMessages((prev) => [...prev, data]));
   }, []);
 
+  useEffect(() => {
+    const handlePopState = (event) => {
+      event.preventDefault();
+      window.history.pushState(null, "", window.location.href);
+    };
+
+    window.history.pushState(null, "", window.location.href);
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
+
   const createPeer = (remoteId, initiator) => {
     const pc = new RTCPeerConnection({
       iceServers: [{ urls: "stun:stun.l.google.com:19302" }],

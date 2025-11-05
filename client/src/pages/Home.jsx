@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -25,7 +24,10 @@ const Home = () => {
   return (
     <Box className="home-container">
       <Paper elevation={3} className="home-paper">
-        <Typography variant="h5" gutterBottom>Join a Meeting</Typography>
+        <Typography variant="h5" gutterBottom style={{ color: "#9486bd" }}>
+          Join a Meeting
+        </Typography>
+        
         <form onSubmit={formik.handleSubmit}>
           <TextField
             fullWidth
@@ -48,8 +50,21 @@ const Home = () => {
           <Button color="primary" variant="contained" fullWidth type="submit">
             Join Room
           </Button>
+          <Button
+            variant="outlined"
+            color="secondary"
+            fullWidth
+            onClick={() => {
+              localStorage.clear();
+              navigate("/login");
+            }}
+            style={{ marginTop: "1rem", backgroundColor: "#FF0000", color: "white" }}
+          >
+            Logout
+          </Button>
         </form>
       </Paper>
+
     </Box>
   );
 };
