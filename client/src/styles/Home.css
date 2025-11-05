@@ -26,3 +26,30 @@
   max-width: 400px;
   text-align: center;
 }
+
+/* Base styles remain unchanged */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    padding: 1rem;
+    height: auto;
+    min-height: 100vh;
+    background-attachment: scroll;
+    /* Prevent fixed background issues on mobile */
+  }
+
+  .home-paper {
+    max-width: 90%;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-paper {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+}

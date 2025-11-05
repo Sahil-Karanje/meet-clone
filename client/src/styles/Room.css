@@ -13,7 +13,7 @@ body {
 }
 
 .room-header {
-  padding: 16px 24px;
+  padding: 5px 24px;
   background: linear-gradient(to right, #715ea7, #4ca1af);
   color: white;
   display: flex;
@@ -51,4 +51,69 @@ body {
   box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
+}
+
+.logo {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Base styles (already provided) remain unchanged */
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .room-container {
+    flex-direction: column;
+  }
+
+  .video-section,
+  .chat-section {
+    flex: none;
+    width: 100%;
+    height: 50vh;
+  }
+
+  .chat-section {
+    border-left: none;
+    border-top: 1px solid #ddd;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 600px) {
+  .room-header {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .logo {
+    height: 3rem;
+    margin-bottom: 8px;
+  }
+
+  .chat-section,
+  .video-section {
+    height: auto;
+    min-height: 40vh;
+    padding: 12px;
+  }
+
+  .room-wrapper {
+    height: auto;
+    min-height: 100vh;
+  }
 }

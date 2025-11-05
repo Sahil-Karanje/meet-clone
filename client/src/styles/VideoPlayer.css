@@ -10,3 +10,15 @@
   border-radius: 10px;
   object-fit: cover;
 }
+
+.btn-share {
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-Weight: bold;
+  cursor: pointer;
+  font-Size: 20px;
+}

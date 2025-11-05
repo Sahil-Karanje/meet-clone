@@ -9,6 +9,12 @@ const Home = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const username = user?.name || "Guest";
 
+  const handleCreateMeeting = () => {
+    console.log("clicked");
+    const newRoomId = crypto.randomUUID();
+    navigate(`/room/${newRoomId}`, { state: { username } });
+  };
+
   const validationSchema = Yup.object({
     roomId: Yup.string().required("Room ID is required"),
   });
@@ -27,7 +33,7 @@ const Home = () => {
         <Typography variant="h5" gutterBottom style={{ color: "#9486bd" }}>
           Join a Meeting
         </Typography>
-        
+
         <form onSubmit={formik.handleSubmit}>
           <TextField
             fullWidth
@@ -51,7 +57,16 @@ const Home = () => {
             Join Room
           </Button>
           <Button
-            variant="outlined"
+            variant="contained"
+            color="primary"
+            fullWidth
+            onClick={() => { handleCreateMeeting() }}
+            style={{ marginTop: "1rem", backgroundColor: "#6b8c3b", color: "white" }}
+          >
+            Create Meeting
+          </Button>
+          <Button
+            variant="contained"
             color="secondary"
             fullWidth
             onClick={() => {

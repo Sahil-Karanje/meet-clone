@@ -160,13 +160,16 @@ const Room = () => {
   return (
     <div className="room-wrapper">
       <div className="room-header">
-        <h2>Room: {roomId}</h2>
+        {/* <h2>Room: {roomId}</h2> */}
+        <div className="logo" >
+          <img src="/logo.png" alt="logo"  />
+        </div>
         <p>Logged in as <strong>{username}</strong></p>
       </div>
 
       <div className="room-container">
         <div className="video-section">
-          <VideoPlayer stream={stream} remoteStream={remoteStream} />
+          <VideoPlayer stream={stream} roomId={roomId} remoteStream={remoteStream} />
         </div>
         <div className="chat-section">
           <ChatBox
